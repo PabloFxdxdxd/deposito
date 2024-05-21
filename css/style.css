@@ -294,7 +294,7 @@ html, body{ height: 100%; }
 	height:inherit;
 }
 .main-menu .navbar-default .navbar-nav li a{
-	color:#fff;
+	color:#000000;
 }
 .main-menu nav li a{
 	padding: 43px 0px 15px;
