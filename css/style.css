@@ -294,12 +294,12 @@ html, body{ height: 100%; }
 	height:inherit;
 }
 .main-menu .navbar-default .navbar-nav li a{
-	color:#fff;
+	color:#000000; /
 }
 .main-menu nav li a{
 	padding: 43px 0px 15px;
 	margin: 0 14px;
-	color: #fff;
+	color: #000000; /
 	font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.6px;
@@ -360,10 +360,12 @@ html, body{ height: 100%; }
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: #ffffff;
+    background-color: #ffffff; /
     transition: 0.5s;
     padding: 10px 0 0 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    
 }
 
 .fixed-menu .navbar-brand{
