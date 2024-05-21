@@ -383,7 +383,7 @@ html, body{ height: 100%; }
 -------------------------------------------------------------------*/
 
 .banner{
-	background:url(../images/banner.jpg) no-repeat center top;
+	background:url(./../images/barrilinicio.PNG) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
