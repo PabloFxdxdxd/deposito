@@ -294,7 +294,7 @@ html, body{ height: 100%; }
 	height:inherit;
 }
 .main-menu .navbar-default .navbar-nav li a{
-	color:#000000;                                                                    /
+	color:#fff;
 }
 .main-menu nav li a{
 	padding: 43px 0px 15px;
@@ -328,7 +328,7 @@ html, body{ height: 100%; }
 
 
 .main-menu nav li a::before {
-    background: #b5b5b5;
+    background: #000000;                                                                         /
     -webkit-transition-delay: 0.4s;
     transition-delay: 0.4s;
 }
