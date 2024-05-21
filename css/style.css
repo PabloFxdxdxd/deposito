@@ -294,12 +294,12 @@ html, body{ height: 100%; }
 	height:inherit;
 }
 .main-menu .navbar-default .navbar-nav li a{
-	color:#ffffff;                                                                          /
+	color:#ffffff;  /*MENU ciando la pantalla es pequeña las letras son blancas*/
 }
 .main-menu nav li a{
 	padding: 43px 0px 15px;
 	margin: 0 14px;
-	color: #000000;                                                                       /
+	color: #000000;  /*Color negro del menu cunado la pantalla es pequeña*/
 	font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.6px;
@@ -360,7 +360,7 @@ html, body{ height: 100%; }
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: #ffffff;                                                          
+    background-color: #ffffff; /*Fondo de color blanco donde estan las letras del menu con pantalla grnade en computadora*/                                                         
     transition: 0.5s;
     padding: 10px 0 0 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -378,7 +378,7 @@ html, body{ height: 100%; }
 
 .fixed-menu .main-menu nav li a{
     padding: 32px 0px 10px 0;
-    color:#000;                                                                       /                                                                       
+    color:#000; /*Color negro de las letras del menu con pantalla grnade*/                                                                       
 }
 
 /*------------------------------------------------------------------
