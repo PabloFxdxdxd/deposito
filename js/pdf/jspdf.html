@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jsPDF</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function() {
+    var doc = new jsPDF();
+
+    doc.setFontSize(40);
+    doc.text(40, 20, "Pedido");
+
+    // Generar el PDF como base64
+    var pdfData = doc.output('datauristring');
+    var base64PDF = pdfData.split(',')[1];
+
+    // Datos del correo electrónico
+    var emailData = {
+        from: {
+            email: "info@domain.com"
+        },
+        to: [
+            {
+                email: "184069@upslp.edu.mx"
+            }
+        ],
+        subject: "Hello from MailerSend!",
+        text: "Greetings from the team, you got this message through MailerSend.",
+        html: "<p>Greetings from the team, you got this message through MailerSend.</p>",
+        attachments: [
+            {
+                content: base64PDF,
+                filename: "pedido.pdf",
+                type: "application/pdf",
+                disposition: "attachment"
+            }
+        ]
+    };
+
+    // Enviar el correo electrónico usando la API de MailerSend
+    $.ajax({
+        url: "https://api.mailersend.com/v1/email",
+        type: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "Authorization": "Bearer mlsn.0ebdff73586ac8dd10d8e5770466b0b2ddeee2e8352aad84c581d0e997dfc105"
+        },
+        data: JSON.stringify(emailData),
+        success: function(response) {
+            alert("Correo enviado exitosamente!");
+        },
+        error: function(response) {
+            alert("Error al enviar el correo: " + response.responseText);
+        }
+    });
+});
+</script>
+</body>
+</html>
