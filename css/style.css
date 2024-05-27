@@ -281,6 +281,7 @@ html, body{ height: 100%; }
     line-height: normal;
     font-size: 100%;
     height: 100%;
+    
 }
 .main-menu .navbar-default{
 	background-color:black; /*Fondo de color negro donde estan las letras del menu con pantalla grnade en computadora*/
