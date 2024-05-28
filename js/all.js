@@ -1,9 +1,9 @@
 /******************************************
-    File Name: all.js
-    Template Name: Landigoo
-    Created By: MelodyThemes
-    Envato Profile: http://themeforest.net/user/melodythemes
-    Website: https://melodythemes.com
+    Nombre del archivo: all.js
+    Nombre de la plantilla: Landigoo
+    Creado por: MelodyThemes
+    Perfil: http://themeforest.net/user/melodythemes
+    Sitio web: https://melodythemes.com
     Version: 1.0
 /****************************************** */
 

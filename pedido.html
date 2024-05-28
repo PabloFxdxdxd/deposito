@@ -152,14 +152,18 @@
                                 </div>
                             </div>
                             <!-- fin del col -->
-                            
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-box">
+                                    <input type="text" name="direccion" id="direccion" placeholder="Dirección de Entrega" required="required" data-error="La dirección es necesaria.">
+                                </div>
+                            </div>
                             <!-- fin del col -->
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
                                     <select name="pedidos" id="pedidos" class="selectpicker">
                                         <option selected disabled>Cantidad de encargos</option>
-                                        <option>1</option>
-                                        <option>2</option>
+                                        <option data-num="10">1</option>
+                                        <option data-num="20">2</option>
                                         <option>3</option>
                                         <option>4</option>
                                         <option>5</option>
@@ -331,9 +335,9 @@
         
         for(let i = 1; i<=pedidos;i++){
 
-            aux += "<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><div class='form-box'><select name='p"+i+"' id='p"+i+"' required><option selected disabled>Encargo "+i+"</option><option>-----</option><option>Cartón de Media Corona $355</option><option>Cartón de Media Victoria $355</option><option>Cartón de Media Corona Ambár $355</option><option>Cartón de Mega Corona $440</option><option>Cartón de Mega Victoria $440</option><option>Cartón de Mega Modelo $440</option><option>Lata de victoria grande $465</option><option>Lata de victoria chica $290</option><option>Lata de Modelo grande $465</option><option>Lata de Modelo chica $350</option><option>Lata de corona extra $465</option><option>Lata de corona extra chica $290</option><option>Lata corona light chica $365</option><option>Lata de sol clamato $290</option><option>Lata de New mix chica $380</option><option>Lata de Vicki chamoy $530</option><option>Cigarros montana 25 y 15 $535</option><option>Cigarros Malboro rojo de 20 $720</option></select></div></div>";
+            aux += "<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><div class='form-box'><select name='p"+i+"' id='p"+i+"' required><option selected disabled>Encargo "+i+"</option><option>-----</option><option data-num='355'>Cartón de Media Corona $355</option><option data-num='355'>Cartón de Media Victoria $355</option><option data-num='355'>Cartón de Media Corona Ambár $355</option><option data-num='440'>Cartón de Mega Corona $440</option><option data-num='440'>Cartón de Mega Victoria $440</option><option data-num='440'>Cartón de Mega Modelo $440</option><option data-num='465'>Lata de victoria grande $465</option><option data-num='290'>Lata de victoria chica $290</option><option data-num='465'>Lata de Modelo grande $465</option><option data-num='350'>Lata de Modelo chica $350</option><option data-num='465'>Lata de corona extra $465</option><option data-num='290'>Lata de corona extra chica $290</option><option data-num='365'>Lata corona light chica $365</option><option data-num='290'>Lata de sol clamato $290</option><option data-num='380'>Lata de New mix chica $380</option><option data-num='530'>Lata de Vicki chamoy $530</option><option data-num='535'>Cigarros montana 25 y 15 $535</option><option data-num='720'>Cigarros Malboro rojo de 20 $720</option></select></div></div>";
 
-            aux += "<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><div class='form-box'><select name='c"+i+"' id='c"+i+"' required><option selected disabled>Cantidad "+i+"</option><option>-----</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select></div></div>";
+            aux += "<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><div class='form-box'><select name='c"+i+"' id='c"+i+"' required><option selected disabled value='0'>Cantidad "+i+"</option><option>-----</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option></select></div></div>";
             
         
 
@@ -355,8 +359,9 @@
 		    doc.text(20, 30, "Nombre "+document.forms[0].form_name.value);
 		    doc.text(20, 40, "No. de Teléfono: "+document.forms[0].phone.value);
 		    doc.text(20, 50, "Email: "+document.forms[0].email.value);
-            doc.text(20, 60, "Fecha de entrega: "+document.forms[0].datep.value);
-            doc.text(20, 70, "Hora de entrega: "+document.forms[0].timep.value);
+            doc.text(20, 70, "Direccion de entrega: "+document.forms[0].direccion.value);
+            doc.text(20, 80, "Fecha de entrega: "+document.forms[0].datep.value);
+            doc.text(20, 90, "Hora de entrega: "+document.forms[0].timep.value);
             
             
             
@@ -367,6 +372,8 @@
 			var aux2 = "";
             var pedido = "";
             var cantidad = "";
+            var t = 0;
+            var Total = 0;
 
 
 			for(i = 1; i<=parseInt(document.forms[0].pedidos.value); i++){
@@ -375,23 +382,29 @@
                 pedido = document.forms[0][aux].value;
                 cantidad = document.forms[0][aux2].value;
                 
-                doc.text(20, 80 + (10*i), pedido);
-                doc.text(170, 80 + (10*i), cantidad);
-                /*
-                if(document.forms[1][aux].value == "Cartón de Media Corona $355"){
-                    canti = parseInt(document.forms[0][aux2].value);
-                    total = total + (cantidad *355);
-                }
-                else if(document.forms[1][aux].value == "Cartón de Media Victoria $355"){
-                    canti = parseInt(document.forms[0][aux2].value);
-                    total = total + (cantidad *355);
-                }
-				*/
+                doc.text(20, 100 + (10*i), pedido);
+                doc.text(170, 100 + (10*i), cantidad);
+
+                // Seleccionar el elemento select
+                const selectElement = document.getElementById(aux);
+
+                // Obtener la opción seleccionada
+                const selectedOption = selectElement.selectedOptions[0];
+
+                // Obtener el valor, el valor numérico del data-num y el texto de la opción seleccionada
+
+                const numValue = selectedOption.getAttribute('data-num');
+
+                t = numValue * cantidad;
+                Total += t;
+
 
                 if(i == parseInt(document.forms[0].pedidos.value)){
-                    doc.text(20, 100 + (10*i), "¡Pedido generado!");
-                    doc.text(20, 110 + (10*i), "Ahora solo descargalo y envialo a: 444-XXX-XXXX");
-                    doc.text(20, 120 + (10*i), "O al siguiete correo: 184069@upslp.edu.mx");
+                    doc.text(20, 110 + (10*i), "Total:");
+                    doc.text(50, 110 + (10*i), "$"+Total);
+                    doc.text(20, 125 + (10*i), "¡Pedido generado!");
+                    doc.text(20, 135 + (10*i), "Ahora solo descargalo y envialo a: 444-XXX-XXXX");
+                    doc.text(20, 145 + (10*i), "O al siguiete correo: 184069@upslp.edu.mx");
                 }
                 
 			}
