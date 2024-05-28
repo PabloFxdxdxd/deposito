@@ -1,25 +1,25 @@
 /*------------------------------------------------------------------
-    File Name: style.css
+    Nombre del archivo: style.css
 -------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------
     [Table of contents]
 	
-	1. IMPORT FONTS
-    2. IMPORT FILES
-	3. SKELETON
+	1. IMPORTAR FONTS
+    2. IMPORTAR ARCHIVOS
+	3. ESTRUCTURA
 	  1.1. Preloader
 	  1.2. Scrollup
 	4. HEADER AREA
 	5. BANNER AREA
-	6. ABOUT AREA
-	7. SPECIAL-MENU AREA
+	6. ACERCA DE NOSOTROS
+	7. Muestras AREA
 	8. MENU AREA
-	9. CARTAS Y PRODUCTOS
-    10. RESERVATIONS AREA
+	9. TARJETAS Y PRODUCTOS
+    10. PEDIDOS AREA
 	11. FOOTER AREA
 	12. COPYRIGHT AREA
-	13. COLOR SWITCHER AREA
+	13. AREA AJUSTE DE COLOR
 	
 -------------------------------------------------------------------*/
 
@@ -46,7 +46,7 @@
 @import url(animate.min.css);
 
 /*------------------------------------------------------------------
-    SKELETON
+    ESTRUCTURA
 -------------------------------------------------------------------*/
 @font-face {
     font-family: 'nautilus_pompiliusregular';
@@ -525,6 +525,7 @@ html, body{ height: 100%; }
     transform: translate3d(-50%, 20px, 0);
     opacity: 0;
   }
+  }
   @media (min-width: 768px) {
     from {
       -webkit-transform: translate(-50%, 0);
@@ -541,7 +542,7 @@ html, body{ height: 100%; }
       opacity: 0;
     }
   }
-}
+
 
 @keyframes scrollWheel {
   from {
@@ -558,6 +559,7 @@ html, body{ height: 100%; }
     transform: translate3d(-50%, 20px, 0);
     opacity: 0;
   }
+  }
   @media (min-width: 768px) {
     from {
       -webkit-transform: translate(-50%, 0);
@@ -574,7 +576,7 @@ html, body{ height: 100%; }
       opacity: 0;
     }
   }
-}
+
 	
 /*------------------------------------------------------------------
     ABOUT AREA
@@ -648,16 +650,16 @@ html, body{ height: 100%; }
 
 
 /*------------------------------------------------------------------
-    SPECIAL-MENU AREA
+    MUESTRAS AREA
 -------------------------------------------------------------------*/
-.special-menu{
+.muestras-menu{
 	background:url(../images/special_menu_bg.jpg) no-repeat center;
 	background-attachment:fixed;
 	background-size:cover;
 	position:relative;
 }
 
-.special-menu:before {
+.muestras-menu:before {
     content: '';
     display: inline-block;
     width: 100%;
@@ -687,7 +689,7 @@ html, body{ height: 100%; }
   width: 100%;
   height: auto;
 }
-.special-box .owl-theme .owl-controls{
+.muestras-box .owl-theme .owl-controls{
 	margin:0px;
 }
 
@@ -773,16 +775,16 @@ html, body{ height: 100%; }
     transform: scale(1,1);
 }
 
-.special-box{
+.muestras-box{
 	padding-bottom:40px;
 }
 
-.special-box .owl-theme .owl-controls .owl-page.active span{
+.muestras-box .owl-theme .owl-controls .owl-page.active span{
 	/*background:#e75b1e;*/
 	height: 16px;
 	width: 16px;
 }
-.special-box .owl-theme .owl-controls .owl-page span{
+.muestras-box .owl-theme .owl-controls .owl-page span{
 	border:2px solid #fff;
 	opacity: 1;
 	background:#202020;
@@ -791,118 +793,7 @@ html, body{ height: 100%; }
 }
 
 /*------------------------------------------------------------------
-    MENU AREA
--------------------------------------------------------------------*/
-
-
-.menu-main{
-	
-}
-
-.menu-main .title-caption{
-	color:#666;
-}
-.tab-title-menu {
-	text-align:center;
-}
-
-.tab-title-menu h2{
-	border-bottom:1px solid #666;
-	display: inline-block;
-	padding-top: 10px;
-}
-
-.tab-title-menu p{
-	font-size:35px;
-	padding-top:0px;
-}
-.tab-title-menu p {
-	color:#000;
-}
-
-.tab-menu{
-	background: #f5f5f5;
-    padding: 2px 0px;
-	box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.05);
-}
-
-.offer-item {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-}
-
-.offer-item img {
-    width: 20%;
-    float: left;
-    padding: 10px;
-    background: #fff;
-	border-radius: 50%;
-}
-
-.offer-item div {
-    width: 60%;
-    float: left;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.offer-item .offer-price {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    display: block;
-    width: 92px;
-    height: 92px;
-    line-height: 92px;
-    -moz-border-radius: 92px;
-    -webkit-border-radius: 92px;
-    border-radius: 92px;
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    color: #000;
-    font-size: 26px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    letter-spacing: .5px;
-}
-
-.offer-item div h3 {
-    font-size: 20px;
-    margin: 9px 0 0px;
-    font-family: 'nautilus_pompiliusregular';
-    font-weight: 400;
-    letter-spacing: .5px;
-}
-
-.offer-item div p {
-    color: #6b6b6b;
-}
-
-
-.tab-menu .slick-prev.slick-arrow {
-	display:none;
-}
-.tab-menu .slider.slider-single{
-	border-top:1px solid #ccc;
-	padding-top:25px;
-}
-
-.tab-menu .slick-initialized .slick-slide{
-	outline:none;
-}
-
-.tab-menu .is-active h2{
-	color:#fff;
-	border-bottom: 1px solid #fff;
-}
-.tab-menu .is-active p{
-	color:#fff;
-}
-/*------------------------------------------------------------------
-    Cartas y Productos
+    TARJETAS Y PRODUCTOS
 -------------------------------------------------------------------*/
 
 .contenedor {
@@ -963,7 +854,7 @@ html, body{ height: 100%; }
 }
 
 /*------------------------------------------------------------------
-    RESERVATIONS AREA
+    PEDIOS AREA
 -------------------------------------------------------------------*/
 
 .reservations-main{

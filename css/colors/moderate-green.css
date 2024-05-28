@@ -29,38 +29,10 @@
 .item-type-zoom .item-hover:hover::before{
 	background: rgba(141, 198, 63, 0.5);
 }
-.special-box .owl-theme .owl-controls .owl-page.active span{
+.muestras-box .owl-theme .owl-controls .owl-page.active span{
 	background: #8dc63f;
-}
-.offer-item div h3{
-	color: #8dc63f;
-}
-.tab-menu .is-active{
-	background: #8dc63f;
-}
-.tab-menu .slick-arrow.slick-prev{
-	background: #8dc63f url(../../images/back.png) no-repeat center;
-	background-position: 2px 4px;
-}
-.tab-menu .slick-arrow.slick-next{
-	background: #8dc63f url(../../images/next.png) no-repeat center;
-	background-position: 7px 4px;
-}
-.tab-menu .slick-arrow.slick-prev:hover{
-	background:#8dc63f url(../../images/back_hover.png) no-repeat center;
-	background-position: 2px 4px;
-}
-.tab-menu .slick-arrow.slick-next:hover{
-	background:#8dc63f url(../../images/next_hover.png) no-repeat center;
-	background-position: 7px 4px;
 }
 
-.offer-item .offer-price{
-	border: 1px solid #8dc63f;
-}
-.sf-team:hover .text-col{
-	background-color: #8dc63f;
-}
 .gal-item a::after{
 	background-color: rgba(141, 198, 63, 0.75);
 }
@@ -68,13 +40,7 @@
 	border: 1px solid #8dc63f;
 	color: #8dc63f;
 }
-.blog-btn-v a{
-	background: #8dc63f;
-	border: 3px solid #8dc63f;
-}
-.blog-btn-v a:hover{
-	border: 3px solid #5f9317;
-}
+
 .book-srv a{
 	background: #8dc63f;
 	border: 3px solid #8dc63f;
