@@ -321,19 +321,18 @@
         </div>
     </section>
 
-    <!-- ALL JS FILES -->
+    <!-- Scripts restantes -->
     <script>
-        function siguiente(){
+        function siguiente(){ //Función que se ejecuta después de rellanar la información básica del pedido
 
-        
-
+            //Auxiliar que almacena varios select nuevos según la cantidad de encargos
         let aux = "   <h4 class='form-title' style='margin-top: 500px;margin-bottom: 100px;'>Formulario de compra</h4> ";
 
         
-        var pedidos = parseInt(document.forms[0].pedidos.value);
+        var pedidos = parseInt(document.forms[0].pedidos.value); //Obtención de la cantidad de encargos
         
         
-        for(let i = 1; i<=pedidos;i++){
+        for(let i = 1; i<=pedidos;i++){ //For de almacenamiento de selects según la cantidad de encargos
 
             aux += "<div class='col-lg-6 col-md-6 col-sm-6 col-xs-12'><div class='form-box'><select name='p"+i+"' id='p"+i+"' required><option selected disabled>Encargo "+i+"</option><option>-----</option><option data-num='355'>Cartón de Media Corona $355</option><option data-num='355'>Cartón de Media Victoria $355</option><option data-num='355'>Cartón de Media Corona Ambár $355</option><option data-num='440'>Cartón de Mega Corona $440</option><option data-num='440'>Cartón de Mega Victoria $440</option><option data-num='440'>Cartón de Mega Modelo $440</option><option data-num='465'>Lata de victoria grande $465</option><option data-num='290'>Lata de victoria chica $290</option><option data-num='465'>Lata de Modelo grande $465</option><option data-num='350'>Lata de Modelo chica $350</option><option data-num='465'>Lata de corona extra $465</option><option data-num='290'>Lata de corona extra chica $290</option><option data-num='365'>Lata corona light chica $365</option><option data-num='290'>Lata de sol clamato $290</option><option data-num='380'>Lata de New mix chica $380</option><option data-num='530'>Lata de Vicki chamoy $530</option><option data-num='535'>Cigarros montana 25 y 15 $535</option><option data-num='720'>Cigarros Malboro rojo de 20 $720</option></select></div></div>";
 
@@ -345,7 +344,7 @@
 
         aux += "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><div class='reserve-book-btn text-center'><button class='hvr-underline-from-center' onclick='generar()'>Generar Pedido </button></div></div>";
 
-        document.getElementById("generar_pedido").innerHTML = aux;
+        document.getElementById("generar_pedido").innerHTML = aux; //Aquí se pone la información de la auxiliar en el párrafo con el id "generar_pedido, la cual se encuentra en la estructura del formulario del pedido."
 }
     function generar(){
 
@@ -403,7 +402,7 @@
                     doc.text(20, 110 + (10*i), "Total:");
                     doc.text(50, 110 + (10*i), "$"+Total);
                     doc.text(20, 125 + (10*i), "¡Pedido generado!");
-                    doc.text(20, 135 + (10*i), "Ahora solo descargalo y envialo a: 444-547-0750");
+                    doc.text(20, 135 + (10*i), "Ahora solo descargalo y envialo a: 444-XXX-XXXX");
                     doc.text(20, 145 + (10*i), "O al siguiete correo: 184069@upslp.edu.mx");
                 }
                 
@@ -421,7 +420,7 @@
     }
 
     </script>
-    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq15420bd2d8804b33258bfd45a1232ff1eab983342174128327016364cee68a70" defer></script>
+
     <script src="js/all.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
